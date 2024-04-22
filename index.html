@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    
+
+    <style>
+        body {
+           background-color: #f8d3e5;
+           font-family: Arial, sans-serif;
+           margin: 0;
+           margin-top: 0;
+           padding: 30px;
+           display: flex;
+           flex-direction: column;
+           justify-content: center; 
+           align-items: center; 
+           height: 100vh;
+        }
+
+        #userInfoForm {
+           margin-top: 0;
+           align-content: center;
+        }
+
+        h2 {
+            text-align: center; 
+            margin-top: 0; 
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+
+        form {
+            background-color: #421a45;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            font-family: 'Times New Roman', Times, serif;
+            color: bisque;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="button"] {
+            background-color: #ecb4d2;
+            color: black;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+    </style>
+</head>
+<body>
+    <b><h2>LOGIN FORM</h2></b>
+
+    <form id="userInfoForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+        
+        <input type="button" value="Login" onclick="validateForm()">
+    </form>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (username && email && password && confirmPassword && password === confirmPassword) {
+                alert("Submitted Successfully!");
+            } else {
+                if (!username) {
+                    alert("Please enter a username.");
+                } else if (!password) {
+                    alert("Please enter a password.");
+                } else if (!confirmPassword) {
+                    alert("Please confirm your password.");
+                } else {
+                    alert("Passwords do not match.");
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
